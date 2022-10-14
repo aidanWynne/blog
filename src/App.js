@@ -1,10 +1,11 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Article from './pages/ArticleSingle';
-import ArticleList from './pages/ArticleList';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ArticlePage from './pages/ArticleSinglePage';
+import ArticleListPage from './pages/ArticleListPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
         <NavBar />
         <div id="page-body">
           <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path ="/about"element={<About />}/>
-            <Route path ="/articles"element={<ArticleList />} />
-            <Route path ="/articles/:articleId"element={<Article />} />
+            <Route path="/" element={<HomePage />}/>
+            <Route path ="/about"element={<AboutPage />}/>
+            <Route path ="/articles"element={<ArticleListPage />} />
+            <Route path ="/articles/:articleId"element={<ArticlePage />} />
+            <Route path = "*" element={<NotFoundPage />}/>
           </Routes>
         </div>
       </div>
